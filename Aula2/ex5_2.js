@@ -1,9 +1,8 @@
-function mostrarPromo() {
-    var medic = document.getElementById("inmed").value;
-    var valor = document.getElementById("inpreco").value; 
-    var promo = Math.floor(valor) * 2
-    document.getElementById("outres").textContent =  `Promoção de ${medic}.`;
-    document.getElementById("outres2").textContent = `Leve 2 por apenas R$${promo}`;
+function calcularValor(){
+    var valor = document.getElementById("invalor").value;
+    var tempUso = document.getElementById("intemp").value;
+
+    document.getElementById("outres").textContent = valor;
 }
 
-btpromo.addEventListener("click", mostrarPromo);
+btpreco.addEventListener("click", calcularValor)
