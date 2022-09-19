@@ -1,20 +1,26 @@
-function calculoPeso() {
-  var nome = document.getElementById("inNome").value;
-  var rbMasc = document.getElementById("rbMasc").value;
-  var rbFem = document.getElementById("rbFem").value;
-  var inAlt = document.getElementById("inAlt");
-  var alt = Number(inAlt.value);
-  var masculino = rbMasc.checked;
-  var feminino = rbFem.checked;
+<!DOCTYPE html>
+<html lang="pt-br">
 
-  if (masculino) {
-    var pesoIdeal = 22 * (alt * alt)
-    document.getElementById("outRes").textContent = `${nome}: seu peso ideal é o ${pesoIdeal}`
-  }
-  else {
-    var pesoIdeal = 21 * (alt * alt)
-    document.getElementById("outRes").textContent = `${nome}: seu peso ideal é de ${pesoIdeal}`
-  }
-}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo Peso Ideal</title>
+</head>
 
-btCalculo.addEventListener("click", calculoPeso);
+<body>
+  <h1>Cálculo Peso Ideal</h1>
+  <p>Nome: <input type="text" id="inNome"></p>
+  <p>Sexo:
+    <input type="radio" name="sexo" id="rbMasc">Masculino
+    <input type="radio" name="sexo" id="rbFem">Feminino
+  </p>
+  <p>Altura: <input type="number" id="inAlt"></p>
+
+  <input type="button" value="Calcular Peso Ideal" id="btCalculo">
+  <input type="button" value="Limpar Campos" id="btLimp">
+  <h3 id="outRes"></h3>
+</body>
+<script src="ex2_3.js"></script>
+
+</html>
