@@ -1,29 +1,45 @@
-function mostrarDados() {
-  var nomeAluno = document.getElementById("inNome").value;
-  var inNota1 = document.getElementById("inNota1");
-  var inNota2 = document.getElementById("inNota2");
-
-  var nota1 = Number(inNota1.value);
-  var nota2 = Number(inNota2.value);
-  var media = (nota1 + nota2) / 2
-
-  document.getElementById("outRes1").textContent = `Média das notas ${media}.`
-
-  if (media >= 7) {
-    document.getElementById("outRes2").textContent = `Parabéns ${nomeAluno}, Você foi aprovado(a)!`;
-    outRes2.style.color = "blue";
-  }
-  else if (media >= 4) {
-    document.getElementById("outRes2").textContent = `Atenção ${nomeAluno}, você está em recuperação!`
-    outRes2.style.color = "green";
-  }
-  else {
-    document.getElementById("outRes2").textContent = `Ops, ${nomeAluno}! Você foi reprovado.`;
-    outRes2.style.color = "red";
-  }
-
-}
+function calculoPeso() {
+    var nome = document.getElementById("inNome").value;
+    var rbMasc = document.getElementById("rbMasc").value;
+    var rbFem = document.getElementById("rbFem").value;
+    var inAlt = document.getElementById("inAlt");
+    var alt = Number(inAlt.value);
+    var masculino = rbMasc.checked;
+    var feminino = rbFem.checked;
 
 
+    if (nome == "" || (masculino == false && feminino == false)) {
+        alert("Por favor, informe o nome e selecione o sexo");
+        inNome.focus(); // posiciona (joga o foco) no campo de edição
+        inNome
+        return;
+        }
+  
+     if (alt == 0 || isNaN(alt)) {
+        alert("Por favor, informe a altura corretamente");
+       inAltura.focus();
+       return;
+            }
 
-btMedia.addEventListener("click", mostrarDados);
+
+    if (masculino) {
+    var peso = 22 * Math.pow(alt, 2); // Math.pow eleva ao quadrado
+      } else {
+    var peso = 21 * Math.pow(alt, 2);
+    }
+
+    outRes.textContent = nome + ": Seu peso ideal é " + peso.toFixed(3) + " kg";
+    outRes.style.color = "blue";
+    }
+  
+     btCalculo.addEventListener("click", calculoPeso);
+
+
+  function limparCampos() {
+    // recarrega a página
+    location.reload();
+    // posiciona (joga o foco) no elemento inNome
+    document.getElementById("inNome").focus();
+    }
+    var btLimpar = document.getElementById("btLimp");
+    btLimp.addEventListener("click", limparCampos);
