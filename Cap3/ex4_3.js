@@ -18,6 +18,9 @@ function calculoRaiz() {
 
 }
 
-
+/* Se a raiz for igual à aplicação da Math.floor() sobre a raiz, 
+signica que não há decimais, pois 4.0 é igual a Math.floor(4.0),
+por exemplo. Já 3.872983... é diferente de Math.floor(3.872983..) – que
+retorna 3.0. */
 
 btRaiz.addEventListener("click", calculoRaiz);
