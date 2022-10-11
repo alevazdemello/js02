@@ -28,12 +28,12 @@ function adicionarAtendimento() {
 
   inCorretor.value = "";
   inCorretor.focus();
-
 }
 
 
+
 function atenderCorretor() {
-  if (corretor.length == 0) {
+  if (atendimentos.length == 0) {
     alert("Não há corretores na lista de espera.");
     inCorretor.focus();
     return;
@@ -42,7 +42,7 @@ function atenderCorretor() {
   var outAtendimento = document.getElementById("outAtendimento");
   var outLista = document.getElementById("outLista");
 
-  var atender = corretor.shift();
+  var atender = atendimentos.shift();
 
   outAtendimento.textContent = atender;
 
